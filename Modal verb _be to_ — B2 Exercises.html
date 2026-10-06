@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Modal verb "be to" — B2 Exercises</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f7f5f0;--card:#fff;--ink:#1f2430;--mute:#6b7280;--acc:#2f5bea;--ok:#1b8a4b;--okbg:#e4f5ea;--bad:#c23b3b;--badbg:#fbe9e9;--line:#e3dfd6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15171c;--card:#1e2128;--ink:#e8e9ec;--mute:#9aa0ab;--acc:#7b9bff;--ok:#5fd28c;--okbg:#17301f;--bad:#ff8585;--badbg:#3a1d1d;--line:#2d313a}}
+:root[data-theme="dark"]{--bg:#15171c;--card:#1e2128;--ink:#e8e9ec;--mute:#9aa0ab;--acc:#7b9bff;--ok:#5fd28c;--okbg:#17301f;--bad:#ff8585;--badbg:#3a1d1d;--line:#2d313a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Georgia,"Times New Roman",serif}
+main{max-width:720px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:1.6rem;margin:.2em 0}
+.sub{color:var(--mute);margin:0 0 16px;font-family:system-ui,sans-serif;font-size:.9rem}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding:8px 0;z-index:2;font-family:system-ui,sans-serif}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px}
+.tabs button{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 12px;font:600 .8rem system-ui,sans-serif;cursor:pointer}
+.tabs button.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+.score{display:flex;justify-content:space-between;align-items:center;font-size:.85rem;color:var(--mute)}
+.score button{background:none;border:0;color:var(--acc);cursor:pointer;font:inherit;text-decoration:underline}
+.rule{background:var(--card);border-left:4px solid var(--acc);padding:10px 14px;border-radius:6px;margin:12px 0;font-size:.95rem}
+.q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin:12px 0}
+.q p{margin:0 0 10px}
+.n{font:700 .75rem system-ui,sans-serif;color:var(--mute);margin-bottom:4px}
+.opts{display:flex;flex-direction:column;gap:6px}
+.opts button{text-align:left;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:9px 12px;font:inherit;cursor:pointer}
+.opts button:hover:not(:disabled){border-color:var(--acc)}
+.opts button.ok,.q.ok input{background:var(--okbg);border-color:var(--ok)}
+.opts button.no,.q.no input{background:var(--badbg);border-color:var(--bad)}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+input{flex:1;min-width:160px;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit}
+.row button{background:var(--acc);color:#fff;border:0;border-radius:8px;padding:9px 16px;font:600 .9rem system-ui,sans-serif;cursor:pointer}
+.fb{margin-top:10px;font:.88rem/1.45 system-ui,sans-serif;display:none}
+.fb.show{display:block}
+.fb b.ok{color:var(--ok)}.fb b.no{color:var(--bad)}
+.done{text-align:center;padding:16px;font-family:system-ui,sans-serif;color:var(--mute)}
+</style>
+</head>
+<body>
+<main>
+<h1>Modal verb <i>be to</i></h1>
+<p class="sub">B2 · Lesson B2-19 · Practice: <i>am/is/are to</i>, <i>was/were to</i>, <i>be due to</i></p>
+<div class="bar">
+  <div class="tabs" id="tabs"></div>
+  <div class="score"><span id="sc">Score: 0 / 0</span><button id="rs">Reset all</button></div>
+</div>
+<div id="ex"></div>
+</main>
+<script>
+const S=[
+{n:"1 · Arrangements",r:"<b>Arrangements:</b> events planned in advance. Common in news reports. <i>I am to see the dentist at 11 a.m. tomorrow.</i>",
+q:[
+{t:"g",q:"I ___ the dentist at 11 a.m. tomorrow — we've already agreed. (be to + see)",a:["am to see","'m to see"],e:"Present arrangement: <i>am to see</i>."},
+{t:"g",q:"The President ___ France next Monday. (be to + visit)",a:["is to visit","'s to visit"],e:"News-style report of an official plan."},
+{t:"g",q:"Yesterday I ___ to the dentist at 11, so I couldn't meet you. (be to + go; past arrangement)",a:["was to go"],e:"Past arrangement: <i>was to go</i>."},
+{t:"m",q:"Which sentence sounds most like a news report?",o:["The minister is to open the new bridge on Thursday.","The minister should open the new bridge on Thursday.","The minister might open the new bridge on Thursday."],a:0,e:"<i>Be to</i> reports official plans and agreements."}
+]},
+{n:"2 · Schedules",r:"<b>Schedules and deadlines:</b> <i>be to</i> or <i>be due to</i> + infinitive. <i>The plane is due to arrive in ten minutes.</i>",
+q:[
+{t:"g",q:"Their flight ___ arrive at 6:15. (be due to)",a:["is due to"],e:"<i>Be due to</i> is natural for timetables."},
+{t:"m",q:"Which sentence is NOT correct?",o:["Are we due to hand in the report today?","The train is due to be in London at 5 AM.","The train is due be in London at 5 AM."],a:2,e:"<i>Be due to</i> needs <i>to</i> before the infinitive."},
+{t:"m",q:"\"The flight arrives in 10 minutes.\" means almost the same as…",o:["The flight is due to arrive in 10 minutes.","The flight must arrive in 10 minutes.","The flight might arrive in 10 minutes."],a:0,e:"Both mean: according to the schedule."}
+]},
+{n:"3 · Orders & bans",r:"<b>Orders</b> (affirmative only) and <b>prohibitions</b> (negative only) ≈ <i>must</i> / <i>must not</i>. <i>You are to inform the management immediately!</i>",
+q:[
+{t:"g",q:"You ___ the management about the incident immediately! (order, be to + inform)",a:["are to inform"],e:"Order: <i>are to inform</i> = <i>must inform</i>."},
+{t:"g",q:"You ___ your face here! (prohibition, be to + show)",a:["are not to show","aren't to show","'re not to show"],e:"Prohibition: <i>are not to show</i> = <i>must not show</i>."},
+{t:"m",q:"\"You are not to leave the building.\" is closest to…",o:["You don't have to leave the building.","You must not leave the building.","You might not leave the building."],a:1,e:"Negative <i>be to</i> = prohibition. <i>Don't have to</i> means no obligation."}
+]},
+{n:"4 · Uncertainty",r:"<b>Uncertainty about the future</b> (questions only). Strong emotion is common: <i>What am I to do?</i> is often a desperate or rhetorical question.",
+q:[
+{t:"m",q:"A friend is calmly asking you for advice about a job offer. What does she say?",o:["What should I do?","What am I to do?"],a:0,e:"<i>Should</i> = a real request for advice."},
+{t:"m",q:"Which question sounds desperate or sarcastic?",o:["What do you think I should do?","What am I to do?","What would you advise?"],a:1,e:"<i>What am I to do?</i> is rhetorical or an exclamation of despair."},
+{t:"g",q:"They've taken my passport and my money! Where ___ I ___ now? (be to + go)",a:["am to go","am i to go"],e:"Complete the phrase: <i>am I to go</i>. Type \"am to go\".",h:"type: am to go"}
+]},
+{n:"5 · Destiny",r:"<b>Destiny:</b> <i>was/were to</i> = it was fated to happen. <i>She was to become a great actress.</i>",
+q:[
+{t:"g",q:"She ___ a great actress. (destiny, be to + become)",a:["was to become"],e:"Fate in the past: <i>was to become</i>."},
+{t:"g",q:"They didn't know they ___ never ___ home. (destiny, were to + return)",a:["were to return"],e:"Use <i>were to</i> with <i>they</i>. Type \"were to return\"."},
+{t:"m",q:"\"He was never to see his hometown again.\" suggests…",o:["He refused to go back.","It was his fate not to go back.","He had permission to go back."],a:1,e:"Here <i>be to</i> expresses inevitability."}
+]},
+{n:"6 · Unfulfilled",r:"<b>Unfulfilled plans:</b> <i>was/were to have</i> + past participle = it was planned, but it didn't happen.",
+q:[
+{t:"g",q:"I ___ my kid up from kindergarten, but I completely forgot. (was to + have + pick up)",a:["was to have picked"],e:"<i>Was to have picked</i> = planned but not done."},
+{t:"g",q:"My husband ___ the fridge, but he never did. (fix)",a:["was to have fixed"],e:"<i>Was to have fixed</i>."},
+{t:"m",q:"Which sentence says the meeting did NOT happen?",o:["The ambassador was to meet the President on Friday.","The ambassador was to have met the President on Friday.","The ambassador is to meet the President on Friday."],a:1,e:"Perfect infinitive (<i>to have met</i>) signals the plan wasn't carried out."}
+]},
+{n:"7 · Mixed",r:"<b>Context decides:</b> <i>have to</i> (no alternative), <i>must</i> (self-imposed), <i>am to</i> (arranged).",
+q:[
+{t:"m",q:"\"I must see the dentist.\" Choose the situation:",o:["My tooth hurts and I've no other option.","The appointment is already booked.","I scare myself into going; I've been afraid since childhood."],a:2,e:"<i>Must</i> = inner obligation, speaker's own authority."},
+{t:"m",q:"Which fits: \"My tooth is killing me, so I ___ see the dentist.\"",o:["am to","have to","was to have"],a:1,e:"<i>Have to</i> = external necessity."},
+{t:"m",q:"The appointment is booked for Friday. Best option:",o:["I have to see the dentist.","I must see the dentist.","I am to see the dentist."],a:2,e:"<i>Am to</i> = prior arrangement."},
+{t:"g",q:"After a hard day I ___ my kid up from kindergarten. It was a busy day. (past necessity, no be to)",a:["had to pick"],e:"For simple past obligation use <i>had to</i>. <i>Was to have picked</i> would mean it didn't happen."}
+]}];
+let cur=0,done={},tot=0;S.forEach(s=>tot+=s.q.length);
+const $=id=>document.getElementById(id);
+function norm(s){return s.toLowerCase().replace(/[’‘]/g,"'").replace(/[.!?,]/g,"").replace(/\s+/g," ").trim()}
+function score(){const v=Object.values(done);$("sc").textContent="Score: "+v.filter(x=>x).length+" / "+v.length+" (of "+tot+")"}
+function mark(el,k,ok,e){done[k]=ok;el.classList.add(ok?"ok":"no");const f=el.querySelector(".fb");f.innerHTML="<b class='"+(ok?"ok":"no")+"'>"+(ok?"Correct! ":"Not quite. ")+"</b>"+e;f.classList.add("show");score()}
+function render(){
+ $("tabs").innerHTML=S.map((s,i)=>"<button class='"+(i==cur?"on":"")+"' data-i='"+i+"'>"+s.n+"</button>").join("");
+ $("tabs").querySelectorAll("button").forEach(b=>b.onclick=()=>{cur=+b.dataset.i;render();window.scrollTo(0,0)});
+ const s=S[cur],ex=$("ex");ex.innerHTML="<div class='rule'>"+s.r+"</div>";
+ s.q.forEach((q,j)=>{
+  const k=cur+"-"+j,d=document.createElement("div");d.className="q";
+  let h="<div class='n'>"+(j+1)+" / "+s.q.length+"</div><p>"+q.q+"</p>";
+  if(q.t=="m")h+="<div class='opts'>"+q.o.map((o,i)=>"<button data-i='"+i+"'>"+o+"</button>").join("")+"</div>";
+  else h+="<div class='row'><input placeholder='Type your answer…' autocomplete='off' autocapitalize='off' spellcheck='false'><button>Check</button></div>";
+  d.innerHTML=h+"<div class='fb'></div>";ex.appendChild(d);
+  if(q.t=="m"){const bs=d.querySelectorAll(".opts button");
+   bs.forEach(b=>b.onclick=()=>{if(k in done)return;const i=+b.dataset.i,ok=i==q.a;bs.forEach(x=>x.disabled=true);bs[q.a].classList.add("ok");if(!ok)b.classList.add("no");mark(d,k,ok,q.e)})}
+  else{const inp=d.querySelector("input"),btn=d.querySelector("button");
+   const chk=()=>{if(k in done||!inp.value.trim())return;const ok=q.a.some(a=>norm(a)==norm(inp.value));inp.disabled=true;btn.disabled=true;mark(d,k,ok,q.e+(ok?"":" <b>Answer:</b> "+q.a[0]+"."))};
+   btn.onclick=chk;inp.onkeydown=e=>{if(e.key=="Enter")chk()}}
+ });
+ const left=s.q.filter((_,j)=>!((cur+"-"+j) in done)).length;
+ ex.insertAdjacentHTML("beforeend","<div class='done'>"+(left?left+" left in this section":"Section complete ✓ — try the next tab")+"</div>");
+}
+$("rs").onclick=()=>{done={};render();score()};
+// keep section footer fresh
+document.addEventListener("click",()=>setTimeout(()=>{const d=document.querySelector(".done");if(!d)return;const s=S[cur],l=s.q.filter((_,j)=>!((cur+"-"+j) in done)).length;d.textContent=l?l+" left in this section":"Section complete ✓ — try the next tab"},50));
+render();score();
+</script>
+</body>
+</html>
